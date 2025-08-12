@@ -1,0 +1,288 @@
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Badge } from "@/components/ui/badge";
+import { Mail, Phone, Linkedin, Send, MapPin, Clock } from "lucide-react";
+import { useState } from "react";
+import { toast } from "@/hooks/use-toast";
+
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Create mailto link
+    const mailtoLink = `mailto:vineelbavisettiwork@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    )}`;
+    
+    window.location.href = mailtoLink;
+    
+    toast({
+      title: "Message Sent!",
+      description: "Your email client should open with the pre-filled message. Thank you for reaching out!",
+    });
+    
+    // Reset form
+    setFormData({ name: '', email: '', subject: '', message: '' });
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  const contactInfo = [
+    {
+      icon: Mail,
+      label: "Email",
+      value: "vineelbavisettiwork@gmail.com",
+      href: "mailto:vineelbavisettiwork@gmail.com",
+      color: "primary"
+    },
+    {
+      icon: Phone,
+      label: "Phone",
+      value: "+91 95531 90459",
+      href: "tel:+919553190459",
+      color: "accent"
+    },
+    {
+      icon: Linkedin,
+      label: "LinkedIn",
+      value: "Vineel Bavisetti",
+      href: "https://linkedin.com/in/vineel-bavisetti",
+      color: "primary"
+    },
+    {
+      icon: MapPin,
+      label: "Location",
+      value: "Andhra Pradesh, India",
+      href: "#",
+      color: "accent"
+    }
+  ];
+
+  return (
+    <section id="contact" className="py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            Get In <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Touch</span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Ready to start your next project? Let's discuss how we can work together 
+            to bring your ideas to life.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Contact Form */}
+          <Card className="p-8 card-gradient border-primary/20 hover-lift">
+            <div className="space-y-6">
+              <div className="space-y-2">
+                <h3 className="text-2xl font-bold text-foreground">Send a Message</h3>
+                <p className="text-muted-foreground">
+                  Fill out the form below and I'll get back to you as soon as possible.
+                </p>
+              </div>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <label htmlFor="name" className="text-sm font-medium text-foreground">
+                      Full Name
+                    </label>
+                    <Input
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Enter your full name"
+                      required
+                      className="border-primary/20 focus:border-primary"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="email" className="text-sm font-medium text-foreground">
+                      Email Address
+                    </label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="Enter your email"
+                      required
+                      className="border-primary/20 focus:border-primary"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label htmlFor="subject" className="text-sm font-medium text-foreground">
+                    Subject
+                  </label>
+                  <Input
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="What's this about?"
+                    required
+                    className="border-primary/20 focus:border-primary"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label htmlFor="message" className="text-sm font-medium text-foreground">
+                    Message
+                  </label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Tell me about your project or how I can help..."
+                    required
+                    rows={5}
+                    className="border-primary/20 focus:border-primary resize-none"
+                  />
+                </div>
+
+                <Button type="submit" variant="hero" size="lg" className="w-full group">
+                  <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  Send Message
+                </Button>
+              </form>
+            </div>
+          </Card>
+
+          {/* Contact Information */}
+          <div className="space-y-8">
+            {/* Contact Details */}
+            <Card className="p-8 card-gradient border-accent/20 hover-lift">
+              <div className="space-y-6">
+                <div className="space-y-2">
+                  <h3 className="text-2xl font-bold text-foreground">Contact Information</h3>
+                  <p className="text-muted-foreground">
+                    Prefer to reach out directly? Here are my contact details.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  {contactInfo.map((contact, index) => (
+                    <a
+                      key={index}
+                      href={contact.href}
+                      className="flex items-center gap-4 p-4 rounded-lg border border-accent/10 hover:bg-accent/5 transition-colors group"
+                    >
+                      <div className={`p-3 rounded-lg ${
+                        contact.color === 'primary' ? 'bg-primary/10' : 'bg-accent/10'
+                      }`}>
+                        <contact.icon className={`w-5 h-5 ${
+                          contact.color === 'primary' ? 'text-primary' : 'text-accent'
+                        }`} />
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-medium text-foreground group-hover:text-primary transition-colors">
+                          {contact.label}
+                        </p>
+                        <p className="text-sm text-muted-foreground">
+                          {contact.value}
+                        </p>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </Card>
+
+            {/* Availability */}
+            <Card className="p-8 card-gradient border-primary/20 hover-lift">
+              <div className="space-y-6">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-primary/10 rounded-lg">
+                    <Clock className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground">Availability</h3>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-foreground">Response Time</span>
+                    <Badge variant="secondary" className="bg-success/10 text-success border-success/20">
+                      Within 24 hours
+                    </Badge>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-foreground">Freelance Status</span>
+                    <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+                      Available
+                    </Badge>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-foreground">Time Zone</span>
+                    <span className="text-muted-foreground">IST (UTC +5:30)</span>
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-accent/10">
+                  <p className="text-sm text-muted-foreground">
+                    Currently accepting new projects and collaborations. 
+                    Let's discuss how we can work together!
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center mt-16">
+          <Card className="p-8 card-gradient border-accent/20 max-w-4xl mx-auto">
+            <div className="space-y-6">
+              <h3 className="text-3xl font-bold text-foreground">
+                Ready to Start Your Project?
+              </h3>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Whether you need web development, AI integration, or creative content solutions, 
+                I'm here to help bring your vision to life. Let's create something amazing together!
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  variant="hero" 
+                  size="lg"
+                  onClick={() => window.location.href = 'mailto:vineelbavisettiwork@gmail.com?subject=Project Inquiry'}
+                >
+                  <Mail className="w-4 h-4" />
+                  Start a Project
+                </Button>
+                <Button 
+                  variant="outline-primary" 
+                  size="lg"
+                  onClick={() => window.location.href = 'tel:+919553190459'}
+                >
+                  <Phone className="w-4 h-4" />
+                  Schedule a Call
+                </Button>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;

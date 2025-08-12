@@ -2,41 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Vineel's Portfolio Design System - Modern & Vibrant */
 
 @layer base {
   :root {
+    /* Core Background & Text */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
+    /* Card System */
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
+    --card-hover: 250 100% 97%;
 
+    /* Popover */
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary Brand Colors - Purple/Blue Theme */
+    --primary: 250 84% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 250 100% 75%;
+    --primary-dark: 250 84% 45%;
 
+    /* Secondary Colors */
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
+    /* Accent Colors - Orange/Yellow */
+    --accent: 35 91% 62%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 45 100% 70%;
+
+    /* Muted Colors */
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
+    /* Status Colors */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
 
+    /* Border & Input */
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 250 84% 60%;
 
-    --radius: 0.5rem;
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(250 84% 60%), hsl(280 84% 60%), hsl(35 91% 62%));
+    --gradient-secondary: linear-gradient(135deg, hsl(250 100% 97%), hsl(280 100% 97%));
+    --gradient-accent: linear-gradient(135deg, hsl(35 91% 62%), hsl(45 100% 70%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(250 100% 99%));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(250 84% 60% / 0.1);
+    --shadow-medium: 0 8px 30px hsl(250 84% 60% / 0.15);
+    --shadow-strong: 0 12px 40px hsl(250 84% 60% / 0.2);
+    --shadow-glow: 0 0 30px hsl(250 84% 60% / 0.3);
+
+    /* Animation & Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +130,85 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Hero Components */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+  
+  .accent-gradient {
+    background: var(--gradient-accent);
+  }
+
+  /* Custom Shadows */
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Smooth Transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Interactive Elements */
+  .hover-lift {
+    @apply transition-smooth hover:-translate-y-2 hover:shadow-medium;
+  }
+  
+  .hover-glow {
+    @apply transition-smooth hover:shadow-glow;
+  }
+
+  /* Skill Bars */
+  .skill-bar {
+    @apply h-2 bg-gradient-to-r from-primary to-accent rounded-full transition-all duration-1000;
+  }
+
+  /* Floating Animation */
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  /* Pulse Animation */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes pulse-glow {
+    from { box-shadow: 0 0 20px hsl(250 84% 60% / 0.2); }
+    to { box-shadow: 0 0 40px hsl(250 84% 60% / 0.4); }
   }
 }

@@ -95,7 +95,7 @@ const Hero = () => {
                 <img 
                   src="/lovable-uploads/eba3ce6b-2bb1-4bee-b4d7-168dec413971.png"
                   alt="Vineel Bavisetti - AI & Web Development Enthusiast"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center scale-110"
                 />
               </div>
               {/* Floating badges */}

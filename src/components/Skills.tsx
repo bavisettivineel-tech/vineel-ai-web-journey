@@ -26,7 +26,6 @@ const Skills = () => {
     { name: "Python", level: 60, icon: Code },
     { name: "HTML", level: 60, icon: Code },
     { name: "CSS", level: 60, icon: Palette },
-    { name: "JavaScript", level: 60, icon: Code },
   ];
 
   const softSkills = [

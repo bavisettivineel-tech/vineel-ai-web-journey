@@ -23,10 +23,10 @@ const Skills = () => {
   }, []);
 
   const technicalSkills = [
-    { name: "Python", level: 75, icon: Code },
-    { name: "HTML", level: 85, icon: Code },
-    { name: "CSS", level: 80, icon: Palette },
-    { name: "JavaScript", level: 65, icon: Code },
+    { name: "Python", level: 60, icon: Code },
+    { name: "HTML", level: 60, icon: Code },
+    { name: "CSS", level: 60, icon: Palette },
+    { name: "JavaScript", level: 60, icon: Code },
   ];
 
   const softSkills = [

@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Plane, Train, Car, Plus } from "lucide-react";
+import { ExternalLink, Github, Plane, Train, Car, Plus, MessageSquare, Users, Calculator, Gamepad2, TrendingUp, Download } from "lucide-react";
 
 const Portfolio = () => {
   return (
@@ -109,6 +109,224 @@ const Portfolio = () => {
               </div>
             </div>
           </Card>
+
+          {/* Python Projects Section */}
+          <div className="lg:col-span-2 mt-8">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+                Python <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Projects</span>
+              </h3>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Console-based applications demonstrating Python programming fundamentals and practical solutions
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Bus Ticket Reservation */}
+              <Card className="p-6 card-gradient border-primary/20 hover-lift">
+                <div className="space-y-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <Car className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-foreground mb-2">
+                      Bus Ticket Reservation
+                    </h4>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      Interactive booking system for bus tickets with multiple destinations and seat types
+                    </p>
+                    <div className="space-y-2 text-xs text-muted-foreground">
+                      <div>✓ Multiple destinations (Hyderabad, Chennai, Bangalore, Tirupati)</div>
+                      <div>✓ Different bus types with dynamic pricing</div>
+                      <div>✓ Ticket calculation and receipt generation</div>
+                    </div>
+                  </div>
+                  <div className="flex gap-2">
+                    <Badge variant="outline" className="border-primary/30 text-primary">
+                      Python
+                    </Badge>
+                    <Badge variant="outline" className="border-accent/30 text-accent">
+                      CLI
+                    </Badge>
+                  </div>
+                  <Button variant="ghost" size="sm" className="w-full text-primary hover:bg-primary/10">
+                    <Download className="w-4 h-4" />
+                    View Code
+                  </Button>
+                </div>
+              </Card>
+
+              {/* Chatbot */}
+              <Card className="p-6 card-gradient border-accent/20 hover-lift">
+                <div className="space-y-4">
+                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                    <MessageSquare className="w-6 h-6 text-accent" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-foreground mb-2">
+                      Simple Chatbot
+                    </h4>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      Interactive conversational bot with pattern matching and response generation
+                    </p>
+                    <div className="space-y-2 text-xs text-muted-foreground">
+                      <div>✓ Natural language processing basics</div>
+                      <div>✓ Pattern recognition for user inputs</div>
+                      <div>✓ Continuous conversation loop</div>
+                    </div>
+                  </div>
+                  <div className="flex gap-2">
+                    <Badge variant="outline" className="border-accent/30 text-accent">
+                      Python
+                    </Badge>
+                    <Badge variant="outline" className="border-primary/30 text-primary">
+                      NLP
+                    </Badge>
+                  </div>
+                  <Button variant="ghost" size="sm" className="w-full text-accent hover:bg-accent/10">
+                    <Download className="w-4 h-4" />
+                    View Code
+                  </Button>
+                </div>
+              </Card>
+
+              {/* Contact Book */}
+              <Card className="p-6 card-gradient border-primary/20 hover-lift">
+                <div className="space-y-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <Users className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-foreground mb-2">
+                      Contact Book Manager
+                    </h4>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      Complete contact management system with CRUD operations
+                    </p>
+                    <div className="space-y-2 text-xs text-muted-foreground">
+                      <div>✓ Add, view, update, delete contacts</div>
+                      <div>✓ Search functionality by name/phone</div>
+                      <div>✓ Data persistence during session</div>
+                    </div>
+                  </div>
+                  <div className="flex gap-2">
+                    <Badge variant="outline" className="border-primary/30 text-primary">
+                      Python
+                    </Badge>
+                    <Badge variant="outline" className="border-accent/30 text-accent">
+                      CRUD
+                    </Badge>
+                  </div>
+                  <Button variant="ghost" size="sm" className="w-full text-primary hover:bg-primary/10">
+                    <Download className="w-4 h-4" />
+                    View Code
+                  </Button>
+                </div>
+              </Card>
+
+              {/* Electricity Bill Calculator */}
+              <Card className="p-6 card-gradient border-accent/20 hover-lift">
+                <div className="space-y-4">
+                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                    <Calculator className="w-6 h-6 text-accent" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-foreground mb-2">
+                      Electricity Bill Calculator
+                    </h4>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      Utility bill calculator with tiered pricing structure
+                    </p>
+                    <div className="space-y-2 text-xs text-muted-foreground">
+                      <div>✓ Tiered rate calculation system</div>
+                      <div>✓ Customer details management</div>
+                      <div>✓ Bill receipt generation</div>
+                    </div>
+                  </div>
+                  <div className="flex gap-2">
+                    <Badge variant="outline" className="border-accent/30 text-accent">
+                      Python
+                    </Badge>
+                    <Badge variant="outline" className="border-primary/30 text-primary">
+                      Math
+                    </Badge>
+                  </div>
+                  <Button variant="ghost" size="sm" className="w-full text-accent hover:bg-accent/10">
+                    <Download className="w-4 h-4" />
+                    View Code
+                  </Button>
+                </div>
+              </Card>
+
+              {/* Rock Paper Scissors */}
+              <Card className="p-6 card-gradient border-primary/20 hover-lift">
+                <div className="space-y-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <Gamepad2 className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-foreground mb-2">
+                      Rock Paper Scissors
+                    </h4>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      Classic game implementation with score tracking and multiple rounds
+                    </p>
+                    <div className="space-y-2 text-xs text-muted-foreground">
+                      <div>✓ Random computer opponent</div>
+                      <div>✓ Score tracking system</div>
+                      <div>✓ Multiple rounds with final score</div>
+                    </div>
+                  </div>
+                  <div className="flex gap-2">
+                    <Badge variant="outline" className="border-primary/30 text-primary">
+                      Python
+                    </Badge>
+                    <Badge variant="outline" className="border-accent/30 text-accent">
+                      Game
+                    </Badge>
+                  </div>
+                  <Button variant="ghost" size="sm" className="w-full text-primary hover:bg-primary/10">
+                    <Download className="w-4 h-4" />
+                    View Code
+                  </Button>
+                </div>
+              </Card>
+
+              {/* Stock Portfolio Tracker */}
+              <Card className="p-6 card-gradient border-accent/20 hover-lift">
+                <div className="space-y-4">
+                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                    <TrendingUp className="w-6 h-6 text-accent" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-foreground mb-2">
+                      Stock Portfolio Tracker
+                    </h4>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      Investment portfolio manager with real-time value calculation
+                    </p>
+                    <div className="space-y-2 text-xs text-muted-foreground">
+                      <div>✓ Multiple stock tracking (AAPL, TSLA, GOOGL)</div>
+                      <div>✓ Portfolio value calculation</div>
+                      <div>✓ File export functionality</div>
+                    </div>
+                  </div>
+                  <div className="flex gap-2">
+                    <Badge variant="outline" className="border-accent/30 text-accent">
+                      Python
+                    </Badge>
+                    <Badge variant="outline" className="border-primary/30 text-primary">
+                      Finance
+                    </Badge>
+                  </div>
+                  <Button variant="ghost" size="sm" className="w-full text-accent hover:bg-accent/10">
+                    <Download className="w-4 h-4" />
+                    View Code
+                  </Button>
+                </div>
+              </Card>
+            </div>
+          </div>
 
           {/* Upcoming Projects Placeholder */}
           <Card className="p-8 card-gradient border-accent/20 hover-lift text-center">

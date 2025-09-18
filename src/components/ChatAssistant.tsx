@@ -36,7 +36,7 @@ const ChatAssistant = () => {
     You are an AI assistant for Vineel Bavisetti's portfolio website. Here's information about Vineel:
     
     ABOUT VINEEL:
-    - Computer Engineering student at MVGR College of Engineering
+    - Computer Engineering student at KIET Group of Institutions, pursuing Diploma in Computer Engineering (CME)
     - Passionate about web development and AI technologies
     - Building modern web applications and exploring AI solutions
     
@@ -72,7 +72,7 @@ const ChatAssistant = () => {
     }
     
     if (input.includes('education') || input.includes('college') || input.includes('study')) {
-      return "Vineel is currently a Computer Engineering student at MVGR College of Engineering. He's passionate about web development and AI technologies, constantly learning and building modern applications.";
+      return "Vineel is currently pursuing a Diploma in Computer Engineering (CME) at KIET Group of Institutions. He's passionate about web development and AI technologies, constantly learning and building modern applications.";
     }
     
     if (input.includes('contact') || input.includes('reach') || input.includes('email')) {
@@ -99,7 +99,7 @@ const ChatAssistant = () => {
       return "Hello! I'm here to help you learn more about Vineel Bavisetti's work and experience. Feel free to ask about his projects, skills, education, or anything else you'd like to know!";
     }
     
-    return "That's a great question! I can tell you about Vineel's projects (like Vineel Services and his Python applications), his technical skills (HTML, CSS, React, Python), his education at MVGR College of Engineering, or help you get in touch with him. What specifically would you like to know more about?";
+    return "That's a great question! I can tell you about Vineel's projects (like Vineel Services and his Python applications), his technical skills (HTML, CSS, React, Python), his education at KIET Group of Institutions, or help you get in touch with him. What specifically would you like to know more about?";
   };
 
   const sendMessage = async () => {

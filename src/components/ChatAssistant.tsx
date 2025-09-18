@@ -25,8 +25,6 @@ const ChatAssistant = () => {
   ]);
   const [inputMessage, setInputMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [apiKey, setApiKey] = useState(() => localStorage.getItem('perplexity_api_key') || "");
-  const [showApiKeyInput, setShowApiKeyInput] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
 
@@ -62,30 +60,50 @@ const ChatAssistant = () => {
     Please answer questions about Vineel's background, projects, skills, and experience in a helpful and professional manner. Keep responses concise but informative.
   `;
 
+  const getLocalResponse = (userInput: string): string => {
+    const input = userInput.toLowerCase();
+    
+    if (input.includes('skill') || input.includes('technology') || input.includes('tech')) {
+      return "Vineel's core skills include HTML, CSS, React, Tailwind CSS, Python, and C programming. He's currently learning modern web technologies and exploring AI/ML development. He has experience building responsive web applications and interactive Python projects.";
+    }
+    
+    if (input.includes('project') || input.includes('work') || input.includes('portfolio')) {
+      return "Vineel has worked on several impressive projects:\n\n• Vineel Services - A comprehensive travel booking webpage with RTC, railway, and airway booking functionalities\n• Bus Ticket Reservation System - Interactive booking with multiple destinations\n• Simple Chatbot - Pattern-matching conversational bot\n• Contact Book Manager - Full CRUD operations for contact management\n• Electricity Bill Calculator - Utility calculator with tiered pricing\n• Rock Paper Scissors Game - Classic game with score tracking\n• Stock Portfolio Tracker - Investment portfolio manager\n\nAll projects showcase his web development and Python programming skills.";
+    }
+    
+    if (input.includes('education') || input.includes('college') || input.includes('study')) {
+      return "Vineel is currently a Computer Engineering student at MVGR College of Engineering. He's passionate about web development and AI technologies, constantly learning and building modern applications.";
+    }
+    
+    if (input.includes('contact') || input.includes('reach') || input.includes('email')) {
+      return "You can reach out to Vineel through the contact section on this website. He's always open to discussing new opportunities, collaborations, or answering questions about his projects!";
+    }
+    
+    if (input.includes('experience') || input.includes('background')) {
+      return "Vineel is an aspiring Computer Engineering student with hands-on experience in web development and Python programming. He has built multiple projects ranging from travel booking systems to AI chatbots, showcasing his versatility in both frontend and backend development.";
+    }
+    
+    if (input.includes('python')) {
+      return "Vineel has extensive Python experience with projects like Bus Ticket Reservation System, Contact Book Manager, Electricity Bill Calculator, Rock Paper Scissors Game, and Stock Portfolio Tracker. His Python projects demonstrate skills in GUI development, data management, and interactive applications.";
+    }
+    
+    if (input.includes('web') || input.includes('html') || input.includes('css') || input.includes('react')) {
+      return "Vineel specializes in modern web development using HTML, CSS, React, and Tailwind CSS. His flagship project 'Vineel Services' is a comprehensive travel booking webpage that demonstrates his frontend development skills and user experience design.";
+    }
+    
+    if (input.includes('github') || input.includes('repository') || input.includes('code')) {
+      return "Vineel maintains an active GitHub profile with multiple repositories showcasing his projects. You can find his work on GitHub, including the Vineel Services project and various Python applications. His repositories demonstrate clean code practices and project documentation.";
+    }
+    
+    if (input.includes('hello') || input.includes('hi') || input.includes('hey')) {
+      return "Hello! I'm here to help you learn more about Vineel Bavisetti's work and experience. Feel free to ask about his projects, skills, education, or anything else you'd like to know!";
+    }
+    
+    return "That's a great question! I can tell you about Vineel's projects (like Vineel Services and his Python applications), his technical skills (HTML, CSS, React, Python), his education at MVGR College of Engineering, or help you get in touch with him. What specifically would you like to know more about?";
+  };
+
   const sendMessage = async () => {
     if (!inputMessage.trim()) return;
-    
-    if (!apiKey && !showApiKeyInput) {
-      setShowApiKeyInput(true);
-      toast({
-        title: "API Key Required",
-        description: "Please enter your Perplexity API key to chat with the assistant.",
-        variant: "default"
-      });
-      return;
-    }
-
-    if (!apiKey) {
-      toast({
-        title: "API Key Missing",
-        description: "Please enter your Perplexity API key first.",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    // Save API key to localStorage
-    localStorage.setItem('perplexity_api_key', apiKey);
 
     const userMessage: Message = {
       id: Date.now().toString(),
@@ -95,67 +113,23 @@ const ChatAssistant = () => {
     };
 
     setMessages(prev => [...prev, userMessage]);
+    const currentInput = inputMessage;
     setInputMessage("");
     setIsLoading(true);
 
-    try {
-      const response = await fetch('https://api.perplexity.ai/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${apiKey}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          model: 'llama-3.1-sonar-small-128k-online',
-          messages: [
-            {
-              role: 'system',
-              content: portfolioContext
-            },
-            {
-              role: 'user',
-              content: inputMessage
-            }
-          ],
-          temperature: 0.2,
-          top_p: 0.9,
-          max_tokens: 500,
-          return_images: false,
-          return_related_questions: false,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to get AI response');
-      }
-
-      const data = await response.json();
+    // Simulate a brief delay for more natural conversation feel
+    setTimeout(() => {
+      const response = getLocalResponse(currentInput);
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
-        content: data.choices[0].message.content,
+        content: response,
         role: 'assistant',
         timestamp: new Date()
       };
 
       setMessages(prev => [...prev, aiResponse]);
-    } catch (error) {
-      console.error('Error:', error);
-      toast({
-        title: "Error",
-        description: "Failed to get AI response. Please check your API key and try again.",
-        variant: "destructive"
-      });
-      
-      const errorMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        content: "Sorry, I'm having trouble connecting right now. Please try again later or check your API key.",
-        role: 'assistant',
-        timestamp: new Date()
-      };
-      setMessages(prev => [...prev, errorMessage]);
-    } finally {
       setIsLoading(false);
-    }
+    }, 1000);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -192,41 +166,16 @@ const ChatAssistant = () => {
               <p className="text-xs text-muted-foreground">Ask about Vineel's work</p>
             </div>
           </div>
-          <div className="flex items-center gap-1">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setShowApiKeyInput(!showApiKeyInput)}
-              className="w-8 h-8 p-0"
-            >
-              <Settings className="w-4 h-4" />
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setIsOpen(false)}
-              className="w-8 h-8 p-0"
-            >
-              <X className="w-4 h-4" />
-            </Button>
-          </div>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setIsOpen(false)}
+            className="w-8 h-8 p-0"
+          >
+            <X className="w-4 h-4" />
+          </Button>
         </div>
 
-        {/* API Key Input */}
-        {showApiKeyInput && (
-          <div className="p-3 border-b border-border bg-muted/50">
-            <Input
-              type="password"
-              placeholder="Enter Perplexity API Key"
-              value={apiKey}
-              onChange={(e) => setApiKey(e.target.value)}
-              className="text-sm"
-            />
-            <p className="text-xs text-muted-foreground mt-1">
-              Get your free API key from <a href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">perplexity.ai</a>
-            </p>
-          </div>
-        )}
 
         {/* Messages */}
         <div className="flex-1 overflow-y-auto p-4 space-y-4">

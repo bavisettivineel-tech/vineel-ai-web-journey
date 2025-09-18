@@ -2,8 +2,10 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, Plane, Train, Car, Plus, MessageSquare, Users, Calculator, Gamepad2, TrendingUp, Download } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const Portfolio = () => {
+  const { toast } = useToast();
   return (
     <section id="portfolio" className="py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5">
       <div className="container mx-auto px-6">
@@ -410,7 +412,7 @@ const Portfolio = () => {
                   variant="outline-primary" 
                   size="sm" 
                   className="w-full"
-                  onClick={() => window.open('https://github.com/vineelbavisetti', '_blank')}
+                  onClick={() => window.open('https://github.com/', '_blank')}
                 >
                   <Github className="w-4 h-4" />
                   View Profile
@@ -447,7 +449,12 @@ const Portfolio = () => {
                   variant="ghost" 
                   size="sm" 
                   className="w-full text-accent hover:bg-accent/10"
-                  onClick={() => window.open('https://github.com/vineelbavisetti/vineel-services', '_blank')}
+                  onClick={() => {
+                    toast({
+                      title: "Repository Coming Soon",
+                      description: "This project will be available on GitHub soon!",
+                    });
+                  }}
                 >
                   <ExternalLink className="w-4 h-4" />
                   View Repository
@@ -484,7 +491,12 @@ const Portfolio = () => {
                   variant="ghost" 
                   size="sm" 
                   className="w-full text-primary hover:bg-primary/10"
-                  onClick={() => window.open('https://github.com/vineelbavisetti/ai-chat-assistant', '_blank')}
+                  onClick={() => {
+                    toast({
+                      title: "Repository Coming Soon", 
+                      description: "This project will be available on GitHub soon!",
+                    });
+                  }}
                 >
                   <ExternalLink className="w-4 h-4" />
                   View Repository

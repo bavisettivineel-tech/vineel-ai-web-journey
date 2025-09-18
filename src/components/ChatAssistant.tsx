@@ -25,7 +25,7 @@ const ChatAssistant = () => {
   ]);
   const [inputMessage, setInputMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [apiKey, setApiKey] = useState("");
+  const [apiKey, setApiKey] = useState(() => localStorage.getItem('perplexity_api_key') || "");
   const [showApiKeyInput, setShowApiKeyInput] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
@@ -66,14 +66,26 @@ const ChatAssistant = () => {
     if (!inputMessage.trim()) return;
     
     if (!apiKey && !showApiKeyInput) {
+      setShowApiKeyInput(true);
       toast({
         title: "API Key Required",
-        description: "Please set your Perplexity API key to use the chat assistant.",
-        variant: "destructive"
+        description: "Please enter your Perplexity API key to chat with the assistant.",
+        variant: "default"
       });
-      setShowApiKeyInput(true);
       return;
     }
+
+    if (!apiKey) {
+      toast({
+        title: "API Key Missing",
+        description: "Please enter your Perplexity API key first.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    // Save API key to localStorage
+    localStorage.setItem('perplexity_api_key', apiKey);
 
     const userMessage: Message = {
       id: Date.now().toString(),

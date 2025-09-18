@@ -406,7 +406,12 @@ const Portfolio = () => {
                     <div className="text-xs text-muted-foreground">Commits</div>
                   </div>
                 </div>
-                <Button variant="outline-primary" size="sm" className="w-full">
+                <Button 
+                  variant="outline-primary" 
+                  size="sm" 
+                  className="w-full"
+                  onClick={() => window.open('https://github.com/vineelbavisetti', '_blank')}
+                >
                   <Github className="w-4 h-4" />
                   View Profile
                 </Button>
@@ -438,7 +443,12 @@ const Portfolio = () => {
                     15 commits
                   </div>
                 </div>
-                <Button variant="ghost" size="sm" className="w-full text-accent hover:bg-accent/10">
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  className="w-full text-accent hover:bg-accent/10"
+                  onClick={() => window.open('https://github.com/vineelbavisetti/vineel-services', '_blank')}
+                >
                   <ExternalLink className="w-4 h-4" />
                   View Repository
                 </Button>
@@ -470,7 +480,12 @@ const Portfolio = () => {
                     8 commits
                   </div>
                 </div>
-                <Button variant="ghost" size="sm" className="w-full text-primary hover:bg-primary/10">
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  className="w-full text-primary hover:bg-primary/10"
+                  onClick={() => window.open('https://github.com/vineelbavisetti/ai-chat-assistant', '_blank')}
+                >
                   <ExternalLink className="w-4 h-4" />
                   View Repository
                 </Button>

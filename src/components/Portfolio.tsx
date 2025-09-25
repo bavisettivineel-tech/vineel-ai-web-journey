@@ -151,8 +151,13 @@ const Portfolio = () => {
                       CLI
                     </Badge>
                   </div>
-                  <Button variant="ghost" size="sm" className="w-full text-primary hover:bg-primary/10">
-                    <Download className="w-4 h-4" />
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    className="w-full text-primary hover:bg-primary/10"
+                    onClick={() => window.open('https://github.com/yourusername/bus-ticket-reservation', '_blank')}
+                  >
+                    <Github className="w-4 h-4" />
                     View Code
                   </Button>
                 </div>
@@ -185,8 +190,13 @@ const Portfolio = () => {
                       NLP
                     </Badge>
                   </div>
-                  <Button variant="ghost" size="sm" className="w-full text-accent hover:bg-accent/10">
-                    <Download className="w-4 h-4" />
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    className="w-full text-accent hover:bg-accent/10"
+                    onClick={() => window.open('https://github.com/yourusername/simple-chatbot', '_blank')}
+                  >
+                    <Github className="w-4 h-4" />
                     View Code
                   </Button>
                 </div>
@@ -219,8 +229,13 @@ const Portfolio = () => {
                       CRUD
                     </Badge>
                   </div>
-                  <Button variant="ghost" size="sm" className="w-full text-primary hover:bg-primary/10">
-                    <Download className="w-4 h-4" />
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    className="w-full text-primary hover:bg-primary/10"
+                    onClick={() => window.open('https://github.com/yourusername/contact-book-manager', '_blank')}
+                  >
+                    <Github className="w-4 h-4" />
                     View Code
                   </Button>
                 </div>
@@ -253,8 +268,13 @@ const Portfolio = () => {
                       Math
                     </Badge>
                   </div>
-                  <Button variant="ghost" size="sm" className="w-full text-accent hover:bg-accent/10">
-                    <Download className="w-4 h-4" />
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    className="w-full text-accent hover:bg-accent/10"
+                    onClick={() => window.open('https://github.com/yourusername/electricity-bill-calculator', '_blank')}
+                  >
+                    <Github className="w-4 h-4" />
                     View Code
                   </Button>
                 </div>
@@ -287,8 +307,13 @@ const Portfolio = () => {
                       Game
                     </Badge>
                   </div>
-                  <Button variant="ghost" size="sm" className="w-full text-primary hover:bg-primary/10">
-                    <Download className="w-4 h-4" />
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    className="w-full text-primary hover:bg-primary/10"
+                    onClick={() => window.open('https://github.com/yourusername/rock-paper-scissors', '_blank')}
+                  >
+                    <Github className="w-4 h-4" />
                     View Code
                   </Button>
                 </div>
@@ -321,8 +346,13 @@ const Portfolio = () => {
                       Finance
                     </Badge>
                   </div>
-                  <Button variant="ghost" size="sm" className="w-full text-accent hover:bg-accent/10">
-                    <Download className="w-4 h-4" />
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    className="w-full text-accent hover:bg-accent/10"
+                    onClick={() => window.open('https://github.com/yourusername/stock-portfolio-tracker', '_blank')}
+                  >
+                    <Github className="w-4 h-4" />
                     View Code
                   </Button>
                 </div>

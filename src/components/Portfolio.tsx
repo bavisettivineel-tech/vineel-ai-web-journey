@@ -155,7 +155,7 @@ const Portfolio = () => {
                     variant="ghost" 
                     size="sm" 
                     className="w-full text-primary hover:bg-primary/10"
-                    onClick={() => window.open('https://github.com/yourusername/bus-ticket-reservation', '_blank')}
+                    onClick={() => window.open('https://github.com/bavisettivineel-tech/python-projects/blob/main/bus_ticket_reservation.py', '_blank')}
                   >
                     <Github className="w-4 h-4" />
                     View Code
@@ -194,7 +194,7 @@ const Portfolio = () => {
                     variant="ghost" 
                     size="sm" 
                     className="w-full text-accent hover:bg-accent/10"
-                    onClick={() => window.open('https://github.com/yourusername/simple-chatbot', '_blank')}
+                    onClick={() => window.open('https://github.com/bavisettivineel-tech/python-projects/blob/main/chatbot.py', '_blank')}
                   >
                     <Github className="w-4 h-4" />
                     View Code
@@ -233,7 +233,7 @@ const Portfolio = () => {
                     variant="ghost" 
                     size="sm" 
                     className="w-full text-primary hover:bg-primary/10"
-                    onClick={() => window.open('https://github.com/yourusername/contact-book-manager', '_blank')}
+                    onClick={() => window.open('https://github.com/bavisettivineel-tech/python-projects/blob/main/contact_book.py', '_blank')}
                   >
                     <Github className="w-4 h-4" />
                     View Code
@@ -272,7 +272,7 @@ const Portfolio = () => {
                     variant="ghost" 
                     size="sm" 
                     className="w-full text-accent hover:bg-accent/10"
-                    onClick={() => window.open('https://github.com/yourusername/electricity-bill-calculator', '_blank')}
+                    onClick={() => window.open('https://github.com/bavisettivineel-tech/python-projects/blob/main/electricity_bill_calculator.py', '_blank')}
                   >
                     <Github className="w-4 h-4" />
                     View Code
@@ -311,7 +311,7 @@ const Portfolio = () => {
                     variant="ghost" 
                     size="sm" 
                     className="w-full text-primary hover:bg-primary/10"
-                    onClick={() => window.open('https://github.com/yourusername/rock-paper-scissors', '_blank')}
+                    onClick={() => window.open('https://github.com/bavisettivineel-tech/python-projects/blob/main/rock_paper_scissors.py', '_blank')}
                   >
                     <Github className="w-4 h-4" />
                     View Code
@@ -350,7 +350,7 @@ const Portfolio = () => {
                     variant="ghost" 
                     size="sm" 
                     className="w-full text-accent hover:bg-accent/10"
-                    onClick={() => window.open('https://github.com/yourusername/stock-portfolio-tracker', '_blank')}
+                    onClick={() => window.open('https://github.com/bavisettivineel-tech/python-projects/blob/main/stock_portfolio_tracker.py', '_blank')}
                   >
                     <Github className="w-4 h-4" />
                     View Code

@@ -24,18 +24,34 @@ const Portfolio = () => {
               size="lg" 
               className="bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
               onClick={() => {
-                // Create a download link for the resume
-                const link = document.createElement('a');
-                link.href = '/resume.pdf'; // You'll need to add your resume.pdf to the public folder
-                link.download = 'Vineel_Bavisetti_Resume.pdf';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                
-                toast({
-                  title: "Resume Downloaded",
-                  description: "Thanks for your interest! My resume has been downloaded.",
-                });
+                // Check if resume file exists first
+                fetch('/resume.pdf', { method: 'HEAD' })
+                  .then(response => {
+                    if (response.ok) {
+                      // File exists, proceed with download
+                      const link = document.createElement('a');
+                      link.href = '/resume.pdf';
+                      link.download = 'Vineel_Bavisetti_Resume.pdf';
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                      
+                      toast({
+                        title: "Resume Downloaded",
+                        description: "Thanks for your interest! My resume has been downloaded.",
+                      });
+                    } else {
+                      // File doesn't exist
+                      throw new Error('Resume file not found');
+                    }
+                  })
+                  .catch(() => {
+                    toast({
+                      title: "Resume Not Available",
+                      description: "Please add your resume.pdf file to the public folder to enable downloads.",
+                      variant: "destructive"
+                    });
+                  });
               }}
             >
               <Download className="w-5 h-5 mr-2" />

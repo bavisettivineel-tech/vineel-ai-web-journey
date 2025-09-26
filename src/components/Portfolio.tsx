@@ -13,9 +13,35 @@ const Portfolio = () => {
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
             My <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Portfolio</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Showcasing my projects and achievements in web development and AI technologies
           </p>
+          
+          {/* Resume Download Button */}
+          <div className="flex justify-center">
+            <Button 
+              variant="default" 
+              size="lg" 
+              className="bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+              onClick={() => {
+                // Create a download link for the resume
+                const link = document.createElement('a');
+                link.href = '/resume.pdf'; // You'll need to add your resume.pdf to the public folder
+                link.download = 'Vineel_Bavisetti_Resume.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                toast({
+                  title: "Resume Downloaded",
+                  description: "Thanks for your interest! My resume has been downloaded.",
+                });
+              }}
+            >
+              <Download className="w-5 h-5 mr-2" />
+              Download Resume
+            </Button>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">

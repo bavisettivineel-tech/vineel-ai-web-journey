@@ -96,17 +96,31 @@ const About = () => {
                 </div>
                 <div className="flex-1">
                   <h4 className="text-xl font-semibold text-foreground mb-2">Experience</h4>
-                  <div className="space-y-2">
-                    <h5 className="font-medium text-foreground">
-                      Editor, Thumbnail Designer & AI Tools Researcher
-                    </h5>
-                    <p className="text-sm text-muted-foreground">
-                      X-Factor Company • Founded by Rajesh Adapa
-                    </p>
-                    <p className="text-sm text-muted-foreground mt-2">
-                      Working on creative content, visual design, and researching AI tools 
-                      to enhance company operations and client solutions.
-                    </p>
+                  <div className="space-y-4">
+                    <div className="border-l-2 border-primary/30 pl-4">
+                      <h5 className="font-medium text-foreground">
+                        Editor, Thumbnail Designer & AI Tools Researcher
+                      </h5>
+                      <p className="text-sm text-muted-foreground">
+                        X-Factor Company • Founded by Rajesh Adapa
+                      </p>
+                      <p className="text-sm text-muted-foreground mt-2">
+                        Working on creative content, visual design, and researching AI tools 
+                        to enhance company operations and client solutions.
+                      </p>
+                    </div>
+                    <div className="border-l-2 border-accent/30 pl-4">
+                      <h5 className="font-medium text-foreground">
+                        Python Programming Intern
+                      </h5>
+                      <p className="text-sm text-muted-foreground">
+                        CodSoft • Internship Program
+                      </p>
+                      <p className="text-sm text-muted-foreground mt-2">
+                        Completed internship in Python programming domain, developing 
+                        programming skills and working on various Python projects.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

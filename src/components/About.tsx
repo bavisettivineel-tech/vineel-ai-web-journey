@@ -121,6 +121,18 @@ const About = () => {
                         programming skills and working on various Python projects.
                       </p>
                     </div>
+                    <div className="border-l-2 border-primary/30 pl-4">
+                      <h5 className="font-medium text-foreground">
+                        Python Programming Intern
+                      </h5>
+                      <p className="text-sm text-muted-foreground">
+                        CodeAlpha • Internship Program
+                      </p>
+                      <p className="text-sm text-muted-foreground mt-2">
+                        Completed internship in Python programming domain, enhancing 
+                        coding skills and contributing to Python development projects.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

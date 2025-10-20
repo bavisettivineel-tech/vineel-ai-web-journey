@@ -63,6 +63,51 @@ const ChatAssistant = () => {
   const getLocalResponse = (userInput: string): string => {
     const input = userInput.toLowerCase();
     
+    // Simple greetings
+    if (input.includes('hello') || input.includes('hi') || input.includes('hey')) {
+      return "Hello! I'm here to help you learn more about Vineel Bavisetti's work and experience. Feel free to ask about his projects, skills, education, or anything else you'd like to know!";
+    }
+    
+    // How are you
+    if (input.includes('how are you') || input.includes('how r u') || input.includes('how do you do')) {
+      return "I'm doing great, thank you for asking! I'm here to help answer your questions about Vineel's portfolio. How can I assist you today?";
+    }
+    
+    // What's up / casual greetings
+    if (input.includes("what's up") || input.includes('whats up') || input.includes('wassup') || input.includes('sup')) {
+      return "Not much! Just here to help you learn about Vineel's awesome projects and skills. What would you like to know?";
+    }
+    
+    // Good morning/afternoon/evening
+    if (input.includes('good morning') || input.includes('good afternoon') || input.includes('good evening')) {
+      return "Good day to you! How can I help you explore Vineel's portfolio today?";
+    }
+    
+    // Thank you
+    if (input.includes('thank') || input.includes('thanks')) {
+      return "You're welcome! Feel free to ask if you have any other questions about Vineel's work!";
+    }
+    
+    // Goodbye
+    if (input.includes('bye') || input.includes('goodbye') || input.includes('see you') || input.includes('see ya')) {
+      return "Goodbye! Thanks for checking out Vineel's portfolio. Feel free to come back anytime!";
+    }
+    
+    // Who are you
+    if (input.includes('who are you') || input.includes('what are you')) {
+      return "I'm an AI assistant designed to help you learn about Vineel Bavisetti - his projects, skills, and experience. Think of me as your guide to exploring his portfolio!";
+    }
+    
+    // What can you do
+    if (input.includes('what can you do') || input.includes('how can you help') || input.includes('can you help')) {
+      return "I can tell you all about Vineel's projects, technical skills, educational background, and help you get in touch with him. Just ask me anything you'd like to know!";
+    }
+    
+    // Nice to meet you
+    if (input.includes('nice to meet') || input.includes('pleasure to meet')) {
+      return "Nice to meet you too! I'm excited to tell you about Vineel's work. What would you like to know?";
+    }
+    
     if (input.includes('skill') || input.includes('technology') || input.includes('tech')) {
       return "Vineel's core skills include HTML, CSS, React, Tailwind CSS, Python, and C programming. He's currently learning modern web technologies and exploring AI/ML development. He has experience building responsive web applications and interactive Python projects.";
     }
@@ -79,8 +124,8 @@ const ChatAssistant = () => {
       return "You can reach out to Vineel through the contact section on this website. He's always open to discussing new opportunities, collaborations, or answering questions about his projects!";
     }
     
-    if (input.includes('experience') || input.includes('background')) {
-      return "Vineel is an aspiring Computer Engineering student with hands-on experience in web development and Python programming. He has built multiple projects ranging from travel booking systems to AI chatbots, showcasing his versatility in both frontend and backend development.";
+    if (input.includes('experience') || input.includes('background') || input.includes('internship')) {
+      return "Vineel has completed internships at both CodSoft and CodeAlpha in Python programming domain. He's an aspiring Computer Engineering student with hands-on experience in web development and Python programming. He has built multiple projects ranging from travel booking systems to AI chatbots, showcasing his versatility in both frontend and backend development.";
     }
     
     if (input.includes('python')) {
@@ -93,10 +138,6 @@ const ChatAssistant = () => {
     
     if (input.includes('github') || input.includes('repository') || input.includes('code')) {
       return "Vineel maintains an active GitHub profile with multiple repositories showcasing his projects. You can find his work on GitHub, including the Vineel Services project and various Python applications. His repositories demonstrate clean code practices and project documentation.";
-    }
-    
-    if (input.includes('hello') || input.includes('hi') || input.includes('hey')) {
-      return "Hello! I'm here to help you learn more about Vineel Bavisetti's work and experience. Feel free to ask about his projects, skills, education, or anything else you'd like to know!";
     }
     
     return "That's a great question! I can tell you about Vineel's projects (like Vineel Services and his Python applications), his technical skills (HTML, CSS, React, Python), his education at KIET Group of Institutions, or help you get in touch with him. What specifically would you like to know more about?";

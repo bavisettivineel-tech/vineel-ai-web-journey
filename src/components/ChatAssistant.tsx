@@ -39,6 +39,7 @@ const ChatAssistant = () => {
     - Computer Engineering student at KIET Group of Institutions, pursuing Diploma in Computer Engineering (CME)
     - Passionate about web development and AI technologies
     - Building modern web applications and exploring AI solutions
+    - Available for freelance work
     
     SKILLS:
     - Frontend: HTML, CSS, React, Tailwind CSS
@@ -57,7 +58,23 @@ const ChatAssistant = () => {
     5. Rock Paper Scissors Game - Classic game with score tracking
     6. Stock Portfolio Tracker - Investment portfolio manager with value calculation
     
-    Please answer questions about Vineel's background, projects, skills, and experience in a helpful and professional manner. Keep responses concise but informative.
+    FREELANCING SERVICES:
+    1. Web Development - Starting at ₹5,000
+       - Responsive Design, React & Tailwind CSS, Fast Performance, SEO Optimized
+    2. Python Development - Starting at ₹3,000
+       - Custom Scripts, Data Management, API Integration, Automation Tools
+    3. Full Stack Projects - Starting at ₹8,000
+       - Database Design, User Authentication, API Development, Deployment Support
+    
+    Why Choose Vineel:
+    - Quick turnaround time
+    - Clean and maintainable code
+    - Regular project updates
+    - Post-delivery support
+    - Affordable pricing
+    - Quality guaranteed
+    
+    Please answer questions about Vineel's background, projects, skills, experience, and freelancing services in a helpful and professional manner. Keep responses concise but informative.
   `;
 
   const getLocalResponse = (userInput: string): string => {
@@ -126,6 +143,10 @@ const ChatAssistant = () => {
     
     if (input.includes('experience') || input.includes('background') || input.includes('internship')) {
       return "Vineel has completed internships at both CodSoft and CodeAlpha in Python programming domain. He's an aspiring Computer Engineering student with hands-on experience in web development and Python programming. He has built multiple projects ranging from travel booking systems to AI chatbots, showcasing his versatility in both frontend and backend development.";
+    }
+    
+    if (input.includes('freelance') || input.includes('freelancing') || input.includes('hire') || input.includes('services') || input.includes('pricing') || input.includes('cost')) {
+      return "Vineel offers professional freelancing services:\n\n💻 Web Development (₹5,000+): Responsive design, React & Tailwind CSS, SEO optimized\n🐍 Python Development (₹3,000+): Custom scripts, automation, API integration\n🚀 Full Stack Projects (₹8,000+): Database design, authentication, deployment\n\nWhy choose Vineel? Quick turnaround, clean code, regular updates, post-delivery support, affordable pricing, and quality guaranteed!\n\nReady to start? Contact him through the contact section!";
     }
     
     if (input.includes('python')) {

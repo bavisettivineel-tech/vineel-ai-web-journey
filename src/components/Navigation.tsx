@@ -21,6 +21,7 @@ const Navigation = () => {
     { name: 'Portfolio', href: '#portfolio' },
     { name: 'Skills', href: '#skills' },
     { name: 'Certifications', href: '#certifications' },
+    { name: 'Freelancing', href: '#freelancing' },
     { name: 'Contact', href: '#contact' },
   ];
 

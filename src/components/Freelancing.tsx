@@ -9,22 +9,19 @@ const Freelancing = () => {
       icon: Globe,
       title: "Web Development",
       description: "Custom websites and web applications built with modern technologies",
-      features: ["Responsive Design", "React & Tailwind CSS", "Fast Performance", "SEO Optimized"],
-      price: "Starting at ₹5,000"
+      features: ["Responsive Design", "React & Tailwind CSS", "Fast Performance", "SEO Optimized"]
     },
     {
       icon: Code,
       title: "Python Development",
       description: "Python applications, automation scripts, and backend solutions",
-      features: ["Custom Scripts", "Data Management", "API Integration", "Automation Tools"],
-      price: "Starting at ₹3,000"
+      features: ["Custom Scripts", "Data Management", "API Integration", "Automation Tools"]
     },
     {
       icon: Database,
       title: "Full Stack Projects",
       description: "End-to-end application development with frontend and backend",
-      features: ["Database Design", "User Authentication", "API Development", "Deployment Support"],
-      price: "Starting at ₹8,000"
+      features: ["Database Design", "User Authentication", "API Development", "Deployment Support"]
     }
   ];
 
@@ -82,10 +79,6 @@ const Freelancing = () => {
                   </li>
                 ))}
               </ul>
-
-              <div className="pt-4 border-t border-border">
-                <p className="text-primary font-semibold text-lg">{service.price}</p>
-              </div>
             </Card>
           ))}
         </div>

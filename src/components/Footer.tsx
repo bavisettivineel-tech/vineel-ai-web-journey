@@ -137,7 +137,7 @@ const Footer = () => {
         <div className="border-t border-border mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <span>© 2024 Vineel Bavisetti. Made with</span>
+              <span>© 2025 Vineel Bavisetti. All rights reserved. Made with</span>
               <Heart className="w-4 h-4 text-red-500 animate-pulse" />
               <span>and passion for innovation.</span>
             </div>

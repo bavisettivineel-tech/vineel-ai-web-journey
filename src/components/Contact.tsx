@@ -132,9 +132,9 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-6 lg:gap-12">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 perspective-container">
           {/* Contact Form */}
-          <Card className="p-5 sm:p-8 card-gradient border-primary/20 hover-lift order-2 lg:order-1">
+          <Card className="p-5 sm:p-8 card-gradient border-primary/20 hover-lift hover-glow order-2 lg:order-1">
             <div className="space-y-5 md:space-y-6">
               <div className="space-y-2">
                 <h3 className="text-xl sm:text-2xl font-bold text-foreground">Send a Message</h3>

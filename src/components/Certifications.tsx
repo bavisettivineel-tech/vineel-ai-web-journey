@@ -33,9 +33,9 @@ const Certifications = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 perspective-container">
           {/* CodSoft Python Programming Certificate */}
-          <Card className="p-4 sm:p-6 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] border-primary/20 bg-gradient-to-br from-card to-primary/5">
+          <Card className="p-4 sm:p-6 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] border-primary/20 bg-gradient-to-br from-card to-primary/5 hover-glow shimmer">
             <div className="flex items-start justify-between mb-3 sm:mb-4">
               <div className="p-2 sm:p-3 rounded-full bg-primary/10">
                 <Award className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
@@ -96,7 +96,7 @@ const Certifications = () => {
           </Card>
 
           {/* Placeholder for future certificates */}
-          <Card className="p-4 sm:p-6 border-dashed border-2 border-muted-foreground/30 bg-muted/20">
+          <Card className="p-4 sm:p-6 border-dashed border-2 border-muted-foreground/30 bg-muted/20 hover-lift">
             <div className="text-center py-6 sm:py-8">
               <Award className="w-10 h-10 sm:w-12 sm:h-12 text-muted-foreground/50 mx-auto mb-3 sm:mb-4" />
               <h3 className="text-base sm:text-lg font-semibold text-muted-foreground mb-2">
@@ -109,7 +109,7 @@ const Certifications = () => {
           </Card>
 
           {/* Skills Showcase */}
-          <Card className="p-4 sm:p-6 bg-gradient-to-br from-accent/10 to-card border-accent/20 sm:col-span-2 lg:col-span-1">
+          <Card className="p-4 sm:p-6 bg-gradient-to-br from-accent/10 to-card border-accent/20 sm:col-span-2 lg:col-span-1 hover-glow hover-lift">
             <div className="flex items-center mb-3 sm:mb-4">
               <div className="p-2 sm:p-3 rounded-full bg-accent/10">
                 <Building2 className="w-6 h-6 sm:w-8 sm:h-8 text-accent" />

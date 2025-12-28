@@ -16,7 +16,7 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start perspective-container">
           {/* Bio Section */}
           <div className="space-y-5 md:space-y-6">
             <div className="space-y-3 md:space-y-4">
@@ -59,7 +59,7 @@ const About = () => {
           {/* Education & Experience Cards */}
           <div className="space-y-4 md:space-y-6">
             {/* Education Card */}
-            <Card className="p-4 sm:p-6 card-gradient border-primary/20 hover-lift">
+            <Card className="p-4 sm:p-6 card-gradient border-primary/20 hover-lift hover-glow">
               <div className="flex items-start gap-3 sm:gap-4">
                 <div className="p-2 sm:p-3 bg-primary/10 rounded-lg flex-shrink-0">
                   <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
@@ -89,7 +89,7 @@ const About = () => {
             </Card>
 
             {/* Experience Card */}
-            <Card className="p-4 sm:p-6 card-gradient border-accent/20 hover-lift">
+            <Card className="p-4 sm:p-6 card-gradient border-accent/20 hover-lift hover-glow">
               <div className="flex items-start gap-3 sm:gap-4">
                 <div className="p-2 sm:p-3 bg-accent/10 rounded-lg flex-shrink-0">
                   <Users className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
@@ -139,7 +139,7 @@ const About = () => {
             </Card>
 
             {/* Aspirations Card */}
-            <Card className="p-4 sm:p-6 card-gradient border-primary/20 hover-lift">
+            <Card className="p-4 sm:p-6 card-gradient border-primary/20 hover-lift hover-glow">
               <div className="flex items-start gap-3 sm:gap-4">
                 <div className="p-2 sm:p-3 bg-primary/10 rounded-lg flex-shrink-0">
                   <Target className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />

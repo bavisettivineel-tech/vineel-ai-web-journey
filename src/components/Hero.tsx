@@ -88,21 +88,21 @@ const Hero = () => {
           </div>
 
           {/* Profile Image */}
-          <div className="flex justify-center lg:justify-end order-1 lg:order-2">
-            <div className="relative">
+          <div className="flex justify-center lg:justify-end order-1 lg:order-2 perspective-container">
+            <div className="relative float-3d">
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full blur-lg opacity-70 animate-pulse"></div>
-              <div className="relative w-52 h-52 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white/20 shadow-strong">
+              <div className="relative w-52 h-52 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white/20 shadow-strong hover-glow">
                 <img 
                   src="/lovable-uploads/vineel-profile-updated.jpg"
                   alt="Vineel Bavisetti - AI & Web Development Enthusiast"
-                  className="w-full h-full object-cover object-center scale-110"
+                  className="w-full h-full object-cover object-center scale-110 transition-transform duration-500 hover:scale-125"
                 />
               </div>
               {/* Floating badges */}
-              <div className="absolute -top-2 -left-2 sm:-top-4 sm:-left-4 bg-white/20 backdrop-blur-sm rounded-full px-2 py-1 sm:px-3 sm:py-1 text-white text-xs sm:text-sm font-medium border border-white/30 animate-float">
+              <div className="absolute -top-2 -left-2 sm:-top-4 sm:-left-4 bg-white/20 backdrop-blur-sm rounded-full px-2 py-1 sm:px-3 sm:py-1 text-white text-xs sm:text-sm font-medium border border-white/30 animate-float glass shimmer">
                 AI Enthusiast
               </div>
-              <div className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4 bg-white/20 backdrop-blur-sm rounded-full px-2 py-1 sm:px-3 sm:py-1 text-white text-xs sm:text-sm font-medium border border-white/30 animate-float-delayed">
+              <div className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4 bg-white/20 backdrop-blur-sm rounded-full px-2 py-1 sm:px-3 sm:py-1 text-white text-xs sm:text-sm font-medium border border-white/30 animate-float-delayed glass shimmer">
                 Web Developer
               </div>
             </div>

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Phone, Linkedin, Send, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, Linkedin, Send, MapPin, Clock, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
 import emailjs from '@emailjs/browser';
@@ -81,6 +81,13 @@ const Contact = () => {
       value: "+91 82974 58070",
       href: "tel:+918297458070",
       color: "accent"
+    },
+    {
+      icon: MessageCircle,
+      label: "WhatsApp",
+      value: "+91 82974 58070",
+      href: "https://wa.me/918297458070",
+      color: "primary"
     },
     {
       icon: Linkedin,

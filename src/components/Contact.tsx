@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Phone, Linkedin, Send, MapPin, Clock, MessageCircle } from "lucide-react";
+import { Mail, Phone, Linkedin, Send, MapPin, Clock, MessageCircle, Github, Instagram } from "lucide-react";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
 import emailjs from '@emailjs/browser';
@@ -95,6 +95,20 @@ const Contact = () => {
       value: "Vineel Bavisetti",
       href: "https://linkedin.com/in/vineel-bavisetti",
       color: "primary"
+    },
+    {
+      icon: Github,
+      label: "GitHub",
+      value: "bavisettivineel-tech",
+      href: "https://github.com/bavisettivineel-tech",
+      color: "primary"
+    },
+    {
+      icon: Instagram,
+      label: "Instagram",
+      value: "@vineel_baviseti_1432",
+      href: "https://instagram.com/vineel_baviseti_1432",
+      color: "accent"
     },
     {
       icon: MapPin,

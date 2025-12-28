@@ -120,30 +120,30 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+    <section id="contact" className="py-12 md:py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6">
             Get In <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Touch</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
             Ready to start your next project? Let's discuss how we can work together 
             to bring your ideas to life.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-12">
           {/* Contact Form */}
-          <Card className="p-8 card-gradient border-primary/20 hover-lift">
-            <div className="space-y-6">
+          <Card className="p-5 sm:p-8 card-gradient border-primary/20 hover-lift order-2 lg:order-1">
+            <div className="space-y-5 md:space-y-6">
               <div className="space-y-2">
-                <h3 className="text-2xl font-bold text-foreground">Send a Message</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-xl sm:text-2xl font-bold text-foreground">Send a Message</h3>
+                <p className="text-sm sm:text-base text-muted-foreground">
                   Fill out the form below and I'll get back to you as soon as possible.
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium text-foreground">
@@ -216,36 +216,38 @@ const Contact = () => {
           </Card>
 
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className="space-y-4 sm:space-y-6 lg:space-y-8 order-1 lg:order-2">
             {/* Contact Details */}
-            <Card className="p-8 card-gradient border-accent/20 hover-lift">
-              <div className="space-y-6">
+            <Card className="p-5 sm:p-8 card-gradient border-accent/20 hover-lift">
+              <div className="space-y-4 sm:space-y-6">
                 <div className="space-y-2">
-                  <h3 className="text-2xl font-bold text-foreground">Contact Information</h3>
-                  <p className="text-muted-foreground">
+                  <h3 className="text-xl sm:text-2xl font-bold text-foreground">Contact Information</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground">
                     Prefer to reach out directly? Here are my contact details.
                   </p>
                 </div>
 
-                <div className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3 sm:gap-4">
                   {contactInfo.map((contact, index) => (
                     <a
                       key={index}
                       href={contact.href}
-                      className="flex items-center gap-4 p-4 rounded-lg border border-accent/10 hover:bg-accent/5 transition-colors group"
+                      target={contact.href.startsWith('http') ? '_blank' : undefined}
+                      rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg border border-accent/10 hover:bg-accent/5 transition-colors group"
                     >
-                      <div className={`p-3 rounded-lg ${
+                      <div className={`p-2 sm:p-3 rounded-lg flex-shrink-0 ${
                         contact.color === 'primary' ? 'bg-primary/10' : 'bg-accent/10'
                       }`}>
-                        <contact.icon className={`w-5 h-5 ${
+                        <contact.icon className={`w-4 h-4 sm:w-5 sm:h-5 ${
                           contact.color === 'primary' ? 'text-primary' : 'text-accent'
                         }`} />
                       </div>
-                      <div className="flex-1">
-                        <p className="font-medium text-foreground group-hover:text-primary transition-colors">
+                      <div className="flex-1 min-w-0">
+                        <p className="font-medium text-foreground group-hover:text-primary transition-colors text-sm sm:text-base">
                           {contact.label}
                         </p>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-xs sm:text-sm text-muted-foreground truncate">
                           {contact.value}
                         </p>
                       </div>
@@ -256,36 +258,36 @@ const Contact = () => {
             </Card>
 
             {/* Availability */}
-            <Card className="p-8 card-gradient border-primary/20 hover-lift">
-              <div className="space-y-6">
+            <Card className="p-5 sm:p-8 card-gradient border-primary/20 hover-lift">
+              <div className="space-y-4 sm:space-y-6">
                 <div className="flex items-center gap-3">
-                  <div className="p-3 bg-primary/10 rounded-lg">
-                    <Clock className="w-6 h-6 text-primary" />
+                  <div className="p-2 sm:p-3 bg-primary/10 rounded-lg">
+                    <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground">Availability</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold text-foreground">Availability</h3>
                 </div>
 
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-foreground">Response Time</span>
-                    <Badge variant="secondary" className="bg-success/10 text-success border-success/20">
+                <div className="space-y-3 sm:space-y-4">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-foreground text-sm sm:text-base">Response Time</span>
+                    <Badge variant="secondary" className="bg-success/10 text-success border-success/20 text-xs sm:text-sm">
                       Within 24 hours
                     </Badge>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-foreground">Freelance Status</span>
-                    <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-foreground text-sm sm:text-base">Freelance Status</span>
+                    <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 text-xs sm:text-sm">
                       Available
                     </Badge>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-foreground">Time Zone</span>
-                    <span className="text-muted-foreground">IST (UTC +5:30)</span>
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-foreground text-sm sm:text-base">Time Zone</span>
+                    <span className="text-muted-foreground text-xs sm:text-sm">IST (UTC +5:30)</span>
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-accent/10">
-                  <p className="text-sm text-muted-foreground">
+                <div className="pt-3 sm:pt-4 border-t border-accent/10">
+                  <p className="text-xs sm:text-sm text-muted-foreground">
                     Currently accepting new projects and collaborations. 
                     Let's discuss how we can work together!
                   </p>
@@ -296,20 +298,21 @@ const Contact = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
-          <Card className="p-8 card-gradient border-accent/20 max-w-4xl mx-auto">
-            <div className="space-y-6">
-              <h3 className="text-3xl font-bold text-foreground">
+        <div className="text-center mt-10 md:mt-16">
+          <Card className="p-5 sm:p-8 card-gradient border-accent/20 max-w-4xl mx-auto">
+            <div className="space-y-4 md:space-y-6">
+              <h3 className="text-2xl sm:text-3xl font-bold text-foreground">
                 Ready to Start Your Project?
               </h3>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
                 Whether you need web development, AI integration, or creative content solutions, 
                 I'm here to help bring your vision to life. Let's create something amazing together!
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <Button 
                   variant="hero" 
                   size="lg"
+                  className="w-full sm:w-auto"
                   onClick={() => window.location.href = 'mailto:vineelbavisettiwork@gmail.com?subject=Project Inquiry'}
                 >
                   <Mail className="w-4 h-4" />
@@ -318,7 +321,8 @@ const Contact = () => {
                 <Button 
                   variant="outline-primary" 
                   size="lg"
-                  onClick={() => window.location.href = 'tel:+919553190459'}
+                  className="w-full sm:w-auto"
+                  onClick={() => window.location.href = 'tel:+918297458070'}
                 >
                   <Phone className="w-4 h-4" />
                   Schedule a Call

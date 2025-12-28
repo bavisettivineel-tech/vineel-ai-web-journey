@@ -4,52 +4,52 @@ import { GraduationCap, Target, Users, Lightbulb } from "lucide-react";
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-background via-primary/5 to-accent/5">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+    <section id="about" className="py-12 md:py-20 bg-gradient-to-br from-background via-primary/5 to-accent/5">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6">
             About <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Me</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
             A driven student passionate about AI technologies and web development, 
             currently pursuing Computer Engineering at KIET Group of Institutions.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Bio Section */}
-          <div className="space-y-6">
-            <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-foreground">
+          <div className="space-y-5 md:space-y-6">
+            <div className="space-y-3 md:space-y-4">
+              <h3 className="text-xl sm:text-2xl font-semibold text-foreground">
                 Full Name: Bavisetti Veera Ramakrishna Jogiyya
               </h3>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
                 I'm a passionate student driven by curiosity in AI technologies and web development. 
                 Currently pursuing a Diploma in Computer Engineering (CME) at KIET Group of Institutions, 
                 I'm a proactive learner who believes in continuous growth and innovation.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
                 I work as an editor, thumbnail designer, and AI tools researcher for X-Factor Company, 
                 founded by Rajesh Adapa. This role has enhanced my technical skills while providing 
                 valuable teamwork experience.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
                 My goal is to transition into freelancing in the future, offering innovative and 
                 impactful tech solutions to clients worldwide.
               </p>
             </div>
 
             {/* Key Qualities */}
-            <div className="flex flex-wrap gap-3">
-              <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+            <div className="flex flex-wrap gap-2 md:gap-3">
+              <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 text-xs sm:text-sm">
                 <Lightbulb className="w-3 h-3 mr-1" />
                 Curious Learner
               </Badge>
-              <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/20">
+              <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/20 text-xs sm:text-sm">
                 <Users className="w-3 h-3 mr-1" />
                 Team Player
               </Badge>
-              <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+              <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 text-xs sm:text-sm">
                 <Target className="w-3 h-3 mr-1" />
                 Problem Solver
               </Badge>
@@ -57,29 +57,29 @@ const About = () => {
           </div>
 
           {/* Education & Experience Cards */}
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             {/* Education Card */}
-            <Card className="p-6 card-gradient border-primary/20 hover-lift">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
-                  <GraduationCap className="w-6 h-6 text-primary" />
+            <Card className="p-4 sm:p-6 card-gradient border-primary/20 hover-lift">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="p-2 sm:p-3 bg-primary/10 rounded-lg flex-shrink-0">
+                  <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 </div>
-                <div className="flex-1">
-                  <h4 className="text-xl font-semibold text-foreground mb-2">Education</h4>
+                <div className="flex-1 min-w-0">
+                  <h4 className="text-lg sm:text-xl font-semibold text-foreground mb-2">Education</h4>
                   <div className="space-y-3">
-                    <div className="border-l-2 border-primary/30 pl-4">
-                      <h5 className="font-medium text-foreground">
+                    <div className="border-l-2 border-primary/30 pl-3 sm:pl-4">
+                      <h5 className="font-medium text-foreground text-sm sm:text-base">
                         Diploma in Computer Engineering (CME)
                       </h5>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-xs sm:text-sm text-muted-foreground">
                         KIET Group of Institutions • 1st Year
                       </p>
                     </div>
-                    <div className="border-l-2 border-accent/30 pl-4">
-                      <h5 className="font-medium text-foreground">
+                    <div className="border-l-2 border-accent/30 pl-3 sm:pl-4">
+                      <h5 className="font-medium text-foreground text-sm sm:text-base">
                         10th Grade
                       </h5>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-xs sm:text-sm text-muted-foreground">
                         Completed with 65%
                       </p>
                     </div>
@@ -89,46 +89,46 @@ const About = () => {
             </Card>
 
             {/* Experience Card */}
-            <Card className="p-6 card-gradient border-accent/20 hover-lift">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-accent/10 rounded-lg">
-                  <Users className="w-6 h-6 text-accent" />
+            <Card className="p-4 sm:p-6 card-gradient border-accent/20 hover-lift">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="p-2 sm:p-3 bg-accent/10 rounded-lg flex-shrink-0">
+                  <Users className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
                 </div>
-                <div className="flex-1">
-                  <h4 className="text-xl font-semibold text-foreground mb-2">Experience</h4>
-                  <div className="space-y-4">
-                    <div className="border-l-2 border-primary/30 pl-4">
-                      <h5 className="font-medium text-foreground">
+                <div className="flex-1 min-w-0">
+                  <h4 className="text-lg sm:text-xl font-semibold text-foreground mb-2">Experience</h4>
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="border-l-2 border-primary/30 pl-3 sm:pl-4">
+                      <h5 className="font-medium text-foreground text-sm sm:text-base">
                         Editor, Thumbnail Designer & AI Tools Researcher
                       </h5>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-xs sm:text-sm text-muted-foreground">
                         X-Factor Company • Founded by Rajesh Adapa
                       </p>
-                      <p className="text-sm text-muted-foreground mt-2">
+                      <p className="text-xs sm:text-sm text-muted-foreground mt-1 sm:mt-2">
                         Working on creative content, visual design, and researching AI tools 
                         to enhance company operations and client solutions.
                       </p>
                     </div>
-                    <div className="border-l-2 border-accent/30 pl-4">
-                      <h5 className="font-medium text-foreground">
+                    <div className="border-l-2 border-accent/30 pl-3 sm:pl-4">
+                      <h5 className="font-medium text-foreground text-sm sm:text-base">
                         Python Programming Intern
                       </h5>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-xs sm:text-sm text-muted-foreground">
                         CodSoft • Internship Program
                       </p>
-                      <p className="text-sm text-muted-foreground mt-2">
+                      <p className="text-xs sm:text-sm text-muted-foreground mt-1 sm:mt-2">
                         Completed internship in Python programming domain, developing 
                         programming skills and working on various Python projects.
                       </p>
                     </div>
-                    <div className="border-l-2 border-primary/30 pl-4">
-                      <h5 className="font-medium text-foreground">
+                    <div className="border-l-2 border-primary/30 pl-3 sm:pl-4">
+                      <h5 className="font-medium text-foreground text-sm sm:text-base">
                         Python Programming Intern
                       </h5>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-xs sm:text-sm text-muted-foreground">
                         CodeAlpha • Internship Program
                       </p>
-                      <p className="text-sm text-muted-foreground mt-2">
+                      <p className="text-xs sm:text-sm text-muted-foreground mt-1 sm:mt-2">
                         Completed internship in Python programming domain, enhancing 
                         coding skills and contributing to Python development projects.
                       </p>
@@ -139,14 +139,14 @@ const About = () => {
             </Card>
 
             {/* Aspirations Card */}
-            <Card className="p-6 card-gradient border-primary/20 hover-lift">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
-                  <Target className="w-6 h-6 text-primary" />
+            <Card className="p-4 sm:p-6 card-gradient border-primary/20 hover-lift">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="p-2 sm:p-3 bg-primary/10 rounded-lg flex-shrink-0">
+                  <Target className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 </div>
-                <div className="flex-1">
-                  <h4 className="text-xl font-semibold text-foreground mb-2">Future Goals</h4>
-                  <p className="text-sm text-muted-foreground">
+                <div className="flex-1 min-w-0">
+                  <h4 className="text-lg sm:text-xl font-semibold text-foreground mb-2">Future Goals</h4>
+                  <p className="text-xs sm:text-sm text-muted-foreground">
                     Transitioning into freelancing to offer innovative and impactful 
                     tech solutions, leveraging my skills in AI and web development 
                     to help businesses grow and succeed.

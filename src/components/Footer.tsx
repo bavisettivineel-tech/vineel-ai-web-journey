@@ -1,48 +1,49 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Mail, Phone, Linkedin, Github, Heart, ArrowUp } from "lucide-react";
-
 const Footer = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
-
-  const socialLinks = [
-    {
-      icon: Mail,
-      href: "mailto:vineelbavisettiwork@gmail.com",
-      label: "Email"
-    },
-    {
-      icon: Phone,
-      href: "tel:+919553190459",
-      label: "Phone"
-    },
-    {
-      icon: Linkedin,
-      href: "https://linkedin.com/in/vineel-bavisetti",
-      label: "LinkedIn"
-    },
-    {
-      icon: Github,
-      href: "https://github.com/vineelbavisetti",
-      label: "GitHub"
-    }
-  ];
-
-  const quickLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Contact', href: '#contact' },
-  ];
-
+  const socialLinks = [{
+    icon: Mail,
+    href: "mailto:vineelbavisettiwork@gmail.com",
+    label: "Email"
+  }, {
+    icon: Phone,
+    href: "tel:+919553190459",
+    label: "Phone"
+  }, {
+    icon: Linkedin,
+    href: "https://linkedin.com/in/vineel-bavisetti",
+    label: "LinkedIn"
+  }, {
+    icon: Github,
+    href: "https://github.com/vineelbavisetti",
+    label: "GitHub"
+  }];
+  const quickLinks = [{
+    name: 'About',
+    href: '#about'
+  }, {
+    name: 'Portfolio',
+    href: '#portfolio'
+  }, {
+    name: 'Skills',
+    href: '#skills'
+  }, {
+    name: 'Contact',
+    href: '#contact'
+  }];
   const scrollToSection = (href: string) => {
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    document.querySelector(href)?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <footer className="bg-gradient-to-br from-primary/10 via-background to-accent/10 border-t border-border">
+  return <footer className="bg-gradient-to-br from-primary/10 via-background to-accent/10 border-t border-border">
       <div className="container mx-auto px-6 py-16">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
           {/* Brand Section */}
@@ -72,16 +73,9 @@ const Footer = () => {
 
             {/* Social Links */}
             <div className="flex gap-4">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  className="p-3 bg-card hover:bg-card-hover border border-border rounded-lg hover:border-primary/30 transition-all hover-lift group"
-                  aria-label={social.label}
-                >
+              {socialLinks.map((social, index) => <a key={index} href={social.href} className="p-3 bg-card hover:bg-card-hover border border-border rounded-lg hover:border-primary/30 transition-all hover-lift group" aria-label={social.label}>
                   <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                </a>
-              ))}
+                </a>)}
             </div>
           </div>
 
@@ -89,15 +83,9 @@ const Footer = () => {
           <div className="space-y-6">
             <h4 className="text-xl font-semibold text-foreground">Quick Links</h4>
             <div className="space-y-3">
-              {quickLinks.map((link) => (
-                <button
-                  key={link.name}
-                  onClick={() => scrollToSection(link.href)}
-                  className="block text-muted-foreground hover:text-primary transition-colors hover:translate-x-1 transform duration-200"
-                >
+              {quickLinks.map(link => <button key={link.name} onClick={() => scrollToSection(link.href)} className="block text-muted-foreground hover:text-primary transition-colors hover:translate-x-1 transform duration-200">
                   {link.name}
-                </button>
-              ))}
+                </button>)}
             </div>
           </div>
 
@@ -107,21 +95,13 @@ const Footer = () => {
             <div className="space-y-4">
               <div>
                 <p className="text-sm font-medium text-foreground mb-1">Email</p>
-                <a 
-                  href="mailto:vineelbavisettiwork@gmail.com"
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                >
+                <a href="mailto:vineelbavisettiwork@gmail.com" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                   vineelbavisettiwork@gmail.com
                 </a>
               </div>
               <div>
                 <p className="text-sm font-medium text-foreground mb-1">Phone</p>
-                <a 
-                  href="tel:+919553190459"
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                >
-                  +91 95531 90459
-                </a>
+                <a href="tel:+919553190459" className="text-muted-foreground hover:text-primary transition-colors text-sm">+91 8297458070</a>
               </div>
               <div>
                 <p className="text-sm font-medium text-foreground mb-1">Location</p>
@@ -143,12 +123,7 @@ const Footer = () => {
             </div>
             
             <div className="flex items-center gap-4">
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={scrollToTop}
-                className="group"
-              >
+              <Button variant="outline" size="sm" onClick={scrollToTop} className="group">
                 <ArrowUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
                 Back to Top
               </Button>
@@ -156,8 +131,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;

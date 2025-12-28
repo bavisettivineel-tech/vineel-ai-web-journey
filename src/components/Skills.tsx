@@ -49,9 +49,9 @@ const Skills = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-6 lg:gap-12">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 perspective-container">
           {/* Technical Skills */}
-          <Card className="p-5 sm:p-8 card-gradient border-primary/20 hover-lift">
+          <Card className="p-5 sm:p-8 card-gradient border-primary/20 hover-lift hover-glow">
             <div className="space-y-5 md:space-y-6">
               <div className="flex items-center gap-3 mb-4 sm:mb-8">
                 <div className="p-2 sm:p-3 bg-primary/10 rounded-lg">
@@ -106,7 +106,7 @@ const Skills = () => {
           </Card>
 
           {/* Soft Skills */}
-          <Card className="p-5 sm:p-8 card-gradient border-accent/20 hover-lift">
+          <Card className="p-5 sm:p-8 card-gradient border-accent/20 hover-lift hover-glow">
             <div className="space-y-5 md:space-y-6">
               <div className="flex items-center gap-3 mb-4 sm:mb-8">
                 <div className="p-2 sm:p-3 bg-accent/10 rounded-lg">
@@ -119,7 +119,7 @@ const Skills = () => {
                 {softSkills.map((skill, index) => (
                   <div 
                     key={skill.name}
-                    className={`p-3 sm:p-4 bg-gradient-to-br from-card to-card-hover rounded-lg border border-accent/10 hover-lift transition-all duration-300 ${
+                    className={`p-3 sm:p-4 bg-gradient-to-br from-card to-card-hover rounded-lg border border-accent/10 hover-lift neu-card transition-all duration-300 ${
                       isVisible ? 'animate-fade-in' : 'opacity-0'
                     }`}
                     style={{ animationDelay: `${index * 100}ms` }}

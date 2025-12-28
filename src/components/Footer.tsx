@@ -47,8 +47,12 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-br from-primary/10 via-background to-accent/10 border-t border-border">
-      <div className="container mx-auto px-4 sm:px-6 py-10 md:py-16">
+    <footer className="bg-gradient-to-br from-primary/10 via-background to-accent/10 border-t border-border relative overflow-hidden">
+      {/* Background 3D elements */}
+      <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto px-4 sm:px-6 py-10 md:py-16 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="sm:col-span-2 space-y-4 md:space-y-6">
@@ -71,7 +75,6 @@ const Footer = () => {
               </Badge>
             </div>
 
-            {/* Social Links */}
             <div className="flex gap-3 sm:gap-4">
               {socialLinks.map((social, index) => (
                 <a 
@@ -79,7 +82,7 @@ const Footer = () => {
                   href={social.href} 
                   target={social.href.startsWith('http') ? '_blank' : undefined}
                   rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="p-2.5 sm:p-3 bg-card hover:bg-card-hover border border-border rounded-lg hover:border-primary/30 transition-all hover-lift group" 
+                  className="p-2.5 sm:p-3 bg-card hover:bg-card-hover border border-border rounded-lg hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-medium group neu-card" 
                   aria-label={social.label}
                 >
                   <social.icon className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground group-hover:text-primary transition-colors" />

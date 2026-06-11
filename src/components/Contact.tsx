@@ -3,10 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Phone, Linkedin, Send, MapPin, Clock, MessageCircle, Github, Instagram } from "lucide-react";
+import { Mail, Phone, Linkedin, MapPin, Clock, MessageCircle, Github, Instagram } from "lucide-react";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
-import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,42 +16,31 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Initialize EmailJS
-  const EMAILJS_PUBLIC_KEY = 'DcpV0JG5SVAZ-sFYW';
-  const EMAILJS_SERVICE_ID = 'service_xhzb9rq';
-  const EMAILJS_TEMPLATE_ID = 'template_73g8g5f';
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
     try {
-      // Send email using EmailJS
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          to_name: 'Vineel Bavisetti',
-        },
-        EMAILJS_PUBLIC_KEY
-      );
+      // Build WhatsApp message
+      const whatsappMessage = `Hello! I'm ${formData.name}.\n\nSubject: ${formData.subject}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
+      const encodedMessage = encodeURIComponent(whatsappMessage);
+      const whatsappUrl = `https://wa.me/918297458070?text=${encodedMessage}`;
+      
+      // Open WhatsApp
+      window.open(whatsappUrl, '_blank');
       
       toast({
-        title: "Message Sent Successfully!",
-        description: "Thank you for reaching out! I'll get back to you within 24 hours.",
+        title: "Opening WhatsApp!",
+        description: "Your message has been prepared. Please send it on WhatsApp.",
       });
       
       // Reset form
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
-      console.error('EmailJS error:', error);
+      console.error('WhatsApp error:', error);
       toast({
-        title: "Failed to Send Message",
-        description: "There was an error sending your message. Please try again or contact me directly.",
+        title: "Failed to Open WhatsApp",
+        description: "There was an error. Please try contacting directly via WhatsApp.",
         variant: "destructive"
       });
     } finally {
@@ -139,7 +127,7 @@ const Contact = () => {
               <div className="space-y-2">
                 <h3 className="text-xl sm:text-2xl font-bold text-foreground">Send a Message</h3>
                 <p className="text-sm sm:text-base text-muted-foreground">
-                  Fill out the form below and I'll get back to you as soon as possible.
+                  Fill out the form below and I'll reach out to you on WhatsApp.
                 </p>
               </div>
 
@@ -208,8 +196,8 @@ const Contact = () => {
                 </div>
 
                 <Button type="submit" variant="hero" size="lg" className="w-full group" disabled={isSubmitting}>
-                  <Send className={`w-4 h-4 transition-transform ${isSubmitting ? 'animate-pulse' : 'group-hover:translate-x-1'}`} />
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  <MessageCircle className={`w-4 h-4 transition-transform ${isSubmitting ? 'animate-pulse' : 'group-hover:translate-x-1'}`} />
+                  {isSubmitting ? 'Opening WhatsApp...' : 'Send via WhatsApp'}
                 </Button>
               </form>
             </div>
@@ -313,10 +301,10 @@ const Contact = () => {
                   variant="hero" 
                   size="lg"
                   className="w-full sm:w-auto"
-                  onClick={() => window.location.href = 'mailto:vineelbavisettiwork@gmail.com?subject=Project Inquiry'}
+                  onClick={() => window.open('https://wa.me/918297458070?text=Hi!%20I%20want%20to%20start%20a%20project%20with%20you.', '_blank')}
                 >
-                  <Mail className="w-4 h-4" />
-                  Start a Project
+                  <MessageCircle className="w-4 h-4" />
+                  Start on WhatsApp
                 </Button>
                 <Button 
                   variant="outline-primary" 

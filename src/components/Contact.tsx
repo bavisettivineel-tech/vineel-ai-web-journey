@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Phone, Linkedin, Send, MapPin, Clock, MessageCircle, Github, Instagram } from "lucide-react";
+import { Mail, Phone, Linkedin, MapPin, Clock, MessageCircle, Github, Instagram } from "lucide-react";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
 

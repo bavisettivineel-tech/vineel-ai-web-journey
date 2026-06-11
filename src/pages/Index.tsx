@@ -8,6 +8,7 @@ import Freelancing from "@/components/Freelancing";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ChatAssistant from "@/components/ChatAssistant";
+import Experience from "@/components/Experience";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <Hero />
       <About />
       <Portfolio />
+      <Experience />
       <Skills />
       <Certifications />
       <Freelancing />
